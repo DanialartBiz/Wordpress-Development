@@ -2,8 +2,8 @@
 jQuery(function($){
 	$(window).scroll(function(){
 		var data = {
-			'action': 'loadmore',
-			'query': true_posts,
+			'action': 'scrollmedown',
+			'query': posts,
 			'page' : current_page
 		};
 
@@ -11,7 +11,7 @@ jQuery(function($){
 		if( $(document).scrollTop() > ($(document).height() - marginBottom)){
 			$('.loader').remove();
 			$.ajax({
-				url:ajaxurl,
+				url: url,
 				data:data,
 				type:'POST',
 				beforeSend: function( xhr){
